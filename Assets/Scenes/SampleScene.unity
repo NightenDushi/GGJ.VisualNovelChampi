@@ -153,6 +153,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65402b3e19eef34989eb8d6bbee78d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CharaPrefab: {fileID: 3271502518623396660, guid: ef0aa65791547da41bd9417119e2fcc5, type: 3}
+  CharacterLeft_Position: {x: -5, y: 0, z: 0}
+  CharacterRight_Position: {x: 5, y: 0, z: 0}
 --- !u!4 &628329706
 Transform:
   m_ObjectHideFlags: 0

@@ -2,7 +2,19 @@
 ---
 <<set $minigame_result to 0>>
 <<set $minigame_callback to "start">>
-Hello!
+
+<<show_chara left>>
+Champi:Hello!
+
+<<hide_chara left>>
+I can hide!
+
+<<show_chara right>>
+Come back!
+
+<<show_chara right>>
+And be replaced!
+
 -> Let's run the minigame!
 	<<set $minigame_callback to "MinigameResult">>
 	<<minigame Minijeux1>>

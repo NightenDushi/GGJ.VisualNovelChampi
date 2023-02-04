@@ -59,6 +59,53 @@ public class GameManager : MonoBehaviour
         //NOTE(Nathan) REMOVE LOADING SCREEN HERE
     }
 
+    [SerializeField] CharacterBehaviour CharaPrefab;
+    static CharacterBehaviour CharacterLeft;
+    static CharacterBehaviour CharacterRight;
+
+    [SerializeField] Vector3 CharacterLeft_Position;
+    [SerializeField] Vector3 CharacterRight_Position;
+
+    //Character appear left/right
+    //NOTE(Nathan) Le perso de droite n'inverse pas ses animation d'apparition/Disparition
+
+
+    [YarnCommand("show_chara")]
+    public static void ShowCharacter(string pSide)
+    {
+        if (pSide == "left")
+        {
+            if (CharacterLeft != null)
+                CharacterLeft.Hide();
+            CharacterLeft = Instantiate(Instance.CharaPrefab, Instance.CharacterLeft_Position, Quaternion.identity);
+        } else if (pSide == "right")
+        {
+            if (CharacterRight != null)
+                CharacterRight.Hide();
+            CharacterRight = Instantiate(Instance.CharaPrefab, Instance.CharacterRight_Position, Quaternion.identity);
+            CharacterRight.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+        }
+    }
+    [YarnCommand("hide_chara")]
+    public static void HideCharacter(string pSide)
+    {
+        if (pSide == "left")
+        {
+            if (CharacterLeft != null)
+                CharacterLeft.Hide();
+        } else if (pSide == "right")
+        {
+            if (CharacterRight != null)
+                CharacterRight.Hide();
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawIcon(CharacterLeft_Position, "Light Gizmo.tiff", true);
+        Gizmos.DrawIcon(CharacterRight_Position, "Light Gizmo.tiff", true);
+    }
+
 
 
 }
