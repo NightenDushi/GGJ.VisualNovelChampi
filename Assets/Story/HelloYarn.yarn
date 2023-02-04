@@ -1,8 +1,14 @@
 ﻿title: start
 ---
-
+<<set $minigame_result to 0>>
 Hello!
--> Gosh!	
+-> Let's run the minigame!
+	<<minigame Minijeux1>>
 -> Incredible!
 ===
 
+title: MinigameResult
+---
+Your score is {$minigame_result}!
+
+===
