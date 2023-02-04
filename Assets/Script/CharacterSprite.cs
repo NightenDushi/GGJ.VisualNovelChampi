@@ -24,6 +24,7 @@ public class CharacterSprite: MonoBehaviour
 
     public static string Name;
     public static int Pronoun; //TODO Replace by enum
+    public static float Gender;
 
     void Awake()
     {
