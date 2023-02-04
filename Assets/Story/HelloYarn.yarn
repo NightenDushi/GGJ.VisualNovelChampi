@@ -1,8 +1,10 @@
 ﻿title: start
 ---
 <<set $minigame_result to 0>>
+<<set $minigame_callback to "start">>
 Hello!
 -> Let's run the minigame!
+	<<set $minigame_callback to "MinigameResult">>
 	<<minigame Minijeux1>>
 -> Incredible!
 ===

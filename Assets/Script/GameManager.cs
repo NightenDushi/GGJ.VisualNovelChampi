@@ -32,7 +32,9 @@ public class GameManager : MonoBehaviour
     private void ProcessMinigameResult(int pResult)
     {
         YarnInstance.Variable.SetValue("$minigame_result", (float)pResult);
-        YarnInstance.Dial.StartDialogue("MinigameResult");
+        string callback;
+        bool value =  YarnInstance.Variable.TryGetValue<string>("$minigame_callback", out callback);
+        YarnInstance.Dial.StartDialogue(callback);
     }
 
     [YarnCommand("minigame")]
