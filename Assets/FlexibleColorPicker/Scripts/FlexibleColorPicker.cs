@@ -29,7 +29,7 @@ using TMPro;
 /// <summary>
 /// Main controller script for the flexible color picker system
 /// </summary>
-public class FlexibleColorPicker : MonoBehaviour {
+public class FlexibleColorPicker : MonoBehaviour, IPointerExitHandler{
 
     /*----------------------------------------------------------
     * ----------------------- PARAMETERS -----------------------
@@ -93,7 +93,7 @@ public class FlexibleColorPicker : MonoBehaviour {
     //public settings
     [Tooltip("Color set to the color picker on Start(). If you wish to set a starting color via script please used the standard color parameter of the FCP in stead.")]
     [SerializeField]
-    private Color startingColor = Color.white;
+    public Color startingColor = Color.white;
     [Tooltip("Use static mode: picker images are replaced by static images in stead of adaptive Unity shaders.")]
     public bool staticMode = false;
     [Tooltip("Make sure FCP seperates its picker materials so that the dynamic mode works consistently, even when multiple FPCs are active at the same time. Turning this off yields a slight performance boost.")]
@@ -1164,5 +1164,12 @@ public class FlexibleColorPicker : MonoBehaviour {
             toReturn.a = this.color.a;
             return new BufferedColor(toReturn, bufferedHue, bufferedSaturation);
         }
+    }
+
+
+    public UnityEvent pointerExit;
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        pointerExit.Invoke();
     }
 }
