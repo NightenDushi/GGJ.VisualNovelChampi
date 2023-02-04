@@ -11,36 +11,18 @@ public class Character : MonoBehaviour
         IL, ELLE, IEL
     }
 
-    private enum BodyType
-    {
-        UN, DEUX, TROIS
-    }
-
-    private enum Hat
-    {
-
-    }
-
-    private enum EyeShape
-    {
-
-    }
-
-    private enum NoseShape
-    {
-
-    }
-
-    private Hat hat;
+    private int hatId;
     private Color hatColor;
 
-    private EyeShape eyeShape;
+    private int eyeShapeId;
     private Color eyeColor;
 
-    private NoseShape noseShape;
-
-    private BodyType bodyType;
+    private int bodyTypeId;
     private Color skinColor;
+
+    private int headId;
+
+    private float gender;
 
     private Pronoun pronoun;
     private string _name;
@@ -69,26 +51,41 @@ public class Character : MonoBehaviour
 
     public void ChangeBodyType(int newBodyType)
     {
-        this.bodyType = ((BodyType) newBodyType);
+        this.bodyTypeId = newBodyType;
         UpdatePortrait();
     }
 
     public void ChangeHat(int newHat)
     {
-        this.hat = ((Hat) newHat);
+        this.hatId = newHat;
         UpdatePortrait();
     }
 
-    public void ChangeNoseShape(int newNoseShape)
+    public void ChangeHead(int newHead)
     {
-        this.noseShape = ((NoseShape) newNoseShape);
+        this.headId = newHead;
         UpdatePortrait();
     }
 
     public void ChangeEyeShape(int newEyeShape)
     {
-        this.eyeShape = ((EyeShape) newEyeShape);
+        this.eyeShapeId = newEyeShape;
         UpdatePortrait();
+    }
+
+    public void ChangeEyeColor(Color newEyeColor)
+    {
+        this.eyeColor = newEyeColor;
+    }
+
+    public void ChangeSkinColor(Color newSkinColor)
+    {
+        this.skinColor = newSkinColor;
+    }
+
+    public void ChangeHatColor(Color newHatColor)
+    {
+        this.hatColor = newHatColor;
     }
 
     void UpdatePortrait()
@@ -98,7 +95,13 @@ public class Character : MonoBehaviour
 
     public void Confirm()
     {   
-        Debug.Log("Nom : " + this._name);
-        Debug.Log("Pronoun : " + this.pronoun);
+        logInfos();
+    }
+
+    void logInfos()
+    {
+        Debug.Log("Nom : " + _name);
+        Debug.Log("Pronom : " + pronoun);
+        Debug.Log("Couleur de peau : " + skinColor.ToString());
     }
 }
