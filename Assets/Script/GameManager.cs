@@ -100,11 +100,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawIcon(CharacterLeft_Position, "Light Gizmo.tiff", true);
-        Gizmos.DrawIcon(CharacterRight_Position, "Light Gizmo.tiff", true);
-    }
+    
 
 
 
