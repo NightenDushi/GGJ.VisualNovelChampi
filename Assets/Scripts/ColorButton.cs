@@ -16,7 +16,7 @@ public class ColorButton : MonoBehaviour, IPointerEnterHandler
     // Start is called before the first frame update
     void Start()
     {   
-        colorPicker = transform.GetChild(0).GetComponent<FlexibleColorPicker>();
+        colorPicker = transform.GetChild(1).GetComponent<FlexibleColorPicker>();
 
         SetColor(defaultColor);
         colorPicker.SetColor(defaultColor);
