@@ -38,8 +38,7 @@ public class Character : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UpdateSprite();
-        UpdateColors();
+        Shuffle();
     }
 
     // Update is called once per frame
@@ -146,8 +145,26 @@ public class Character : MonoBehaviour
     }
 
     public void Confirm()
-    {   
-        
+    {
+        logInfos();
+    }
+    
+    public void Shuffle()
+    {
+        Debug.Log("Shuffle...");
+
+        headId = Random.Range(0, CharacterSprite.HeadList.Length);
+        bodyTypeId = Random.Range(0, CharacterSprite.BodyList.Length);
+        eyeShapeId = Random.Range(0, CharacterSprite.EyeList.Length);
+        hatId = Random.Range(0, CharacterSprite.HatList.Length);
+        torsoId = Random.Range(0, CharacterSprite.TorsoList.Length);
+        mouthId = Random.Range(0, CharacterSprite.MouthList.Length);
+        noseId = Random.Range(0, CharacterSprite.NoseList.Length);
+        eyebrowId = Random.Range(0, CharacterSprite.EyebrowList.Length);
+
+
+        UpdateSprite();
+        UpdateColors();
     }
 
     void logInfos()

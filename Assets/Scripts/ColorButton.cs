@@ -20,6 +20,8 @@ public class ColorButton : MonoBehaviour, IPointerEnterHandler
 
         SetColor(defaultColor);
         colorPicker.SetColor(defaultColor);
+
+        onColorChange.Invoke(defaultColor); //Set the default color
     }
 
     // Update is called once per frame
