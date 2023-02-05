@@ -8,11 +8,14 @@ public class CharacterSpriteManager : MonoBehaviour
     public Image BodySprite;
     public Image TorsoSprite;
     public Image HeadSprite;
+    public Image HeadBottomSprite;
+
     public Image MouthSprite;
     public Image NoseSprite;
     public Image EyebrowSprite;
     public Image EyesSprite;
     public Image HatSprite;
+    public Image HatBottomSprite;
 
     public void UpdateSprite()
     {
@@ -26,6 +29,8 @@ public class CharacterSpriteManager : MonoBehaviour
 
         t = CharacterSprite.GetHead();
         HeadSprite.sprite = Sprite.Create(t, new Rect(0, 0, t.width, t.height), new Vector2(0,0), 1);
+        t = CharacterSprite.GetHeadBottom();
+        HeadBottomSprite.sprite = Sprite.Create(t, new Rect(0, 0, t.width, t.height), new Vector2(0,0), 1);
 
         t = CharacterSprite.GetMouth();
         MouthSprite.sprite = Sprite.Create(t, new Rect(0, 0, t.width, t.height), new Vector2(0,0), 1);
@@ -41,6 +46,8 @@ public class CharacterSpriteManager : MonoBehaviour
 
         t = CharacterSprite.GetHat();
         HatSprite.sprite = Sprite.Create(t, new Rect(0, 0, t.width, t.height), new Vector2(0,0), 1);
+        t = CharacterSprite.GetHatBottom();
+        HatBottomSprite.sprite = Sprite.Create(t, new Rect(0, 0, t.width, t.height), new Vector2(0,0), 1);
     }
 
     public void UpdateColors()
@@ -48,6 +55,7 @@ public class CharacterSpriteManager : MonoBehaviour
         //SkinColor
         BodySprite.color = CharacterSprite.SkinColor;
         HeadSprite.color = CharacterSprite.SkinColor;
+        HeadBottomSprite.color = CharacterSprite.SkinColor;
         TorsoSprite.color = CharacterSprite.SkinColor;
         NoseSprite.color = CharacterSprite.SkinColor;
         MouthSprite.color = CharacterSprite.SkinColor;
@@ -55,6 +63,7 @@ public class CharacterSpriteManager : MonoBehaviour
 
         //HatColor
         HatSprite.color = CharacterSprite.HatColor;
+        HatBottomSprite.color = CharacterSprite.HatBottomColor;
 
         //EyeColor
         EyesSprite.color = CharacterSprite.EyeColor;
