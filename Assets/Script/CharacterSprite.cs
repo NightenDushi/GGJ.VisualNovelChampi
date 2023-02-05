@@ -5,7 +5,9 @@ using UnityEngine;
 public class CharacterSprite: MonoBehaviour
 {
     [SerializeField] Texture2D[] _headList;
+    [SerializeField] Texture2D[] _headbottomList;
     [SerializeField] Texture2D[] _hatList;
+    [SerializeField] Texture2D[] _hatbottomList;
     [SerializeField] Texture2D[] _bodyList;
     [SerializeField] Texture2D[] _eyeList;
     [SerializeField] Texture2D[] _noseList;/////
@@ -14,7 +16,9 @@ public class CharacterSprite: MonoBehaviour
     [SerializeField] Texture2D[] _eyebrowList;
 
     public static Texture2D[] HeadList;
+    public static Texture2D[] HeadBottomList;
     public static Texture2D[] HatList;
+    public static Texture2D[] HatBottomList;
     public static Texture2D[] BodyList;
     public static Texture2D[] EyeList;
     public static Texture2D[] NoseList;/////
@@ -32,6 +36,7 @@ public class CharacterSprite: MonoBehaviour
     public static int Eyebrow_id;
 
     public static Color HatColor;
+    public static Color HatBottomColor;
     public static Color EyeColor;
     public static Color SkinColor;
 
@@ -42,7 +47,9 @@ public class CharacterSprite: MonoBehaviour
     void Awake()
     {
         HeadList = _headList;
+        HeadBottomList = _headbottomList;
         HatList = _hatList;
+        HatBottomList = _hatbottomList;
         BodyList = _bodyList;
         EyeList = _eyeList;
 
@@ -56,9 +63,17 @@ public class CharacterSprite: MonoBehaviour
     {
         return HeadList[HeadType_id];
     }
+    public static Texture2D GetHeadBottom()
+    {
+        return HeadBottomList[HeadType_id];
+    }
     public static Texture2D GetHat()
     {
         return HatList[Hat_id];
+    }
+    public static Texture2D GetHatBottom()
+    {
+        return HatBottomList[Hat_id];
     }
     public static Texture2D GetBody()
     {
@@ -92,7 +107,9 @@ public class CharacterSprite: MonoBehaviour
     private void OnValidate()
     {
         _headList = Resources.LoadAll<Texture2D>("Heads");
+        _headbottomList = Resources.LoadAll<Texture2D>("HeadsBottom");
         _hatList = Resources.LoadAll<Texture2D>("Hats");
+        _hatbottomList = Resources.LoadAll<Texture2D>("HatsBottom");
         _bodyList = Resources.LoadAll<Texture2D>("Bodies");
         _eyeList = Resources.LoadAll<Texture2D>("Eyes");
 

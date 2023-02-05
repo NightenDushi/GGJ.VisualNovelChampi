@@ -16,6 +16,7 @@ public class Character : MonoBehaviour
 
     private int hatId;
     private Color hatColor = Color.white;
+    private Color hatBottomColor = Color.white;
 
     private int eyeShapeId;
     private Color eyeColor = Color.white;
@@ -120,6 +121,11 @@ public class Character : MonoBehaviour
         this.hatColor = newHatColor;
         UpdateColors();
     }
+    public void ChangeHatBottomColor(Color newHatColor)
+    {
+        this.hatBottomColor = newHatColor;
+        UpdateColors();
+    }
 
     void UpdateSprite()
     {
@@ -138,6 +144,7 @@ public class Character : MonoBehaviour
     void UpdateColors()
     {
         CharacterSprite.HatColor = hatColor;
+        CharacterSprite.HatBottomColor = hatBottomColor;
         CharacterSprite.EyeColor = eyeColor;
         CharacterSprite.SkinColor = skinColor;
 
