@@ -66,6 +66,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] Vector3 CharacterLeft_Position;
     [SerializeField] Vector3 CharacterRight_Position;
 
+    [SerializeField] GameObject CharacterParent;
+
     //Character appear left/right
     //NOTE(Nathan) Le perso de droite n'inverse pas ses animation d'apparition/Disparition
 
@@ -77,13 +79,17 @@ public class GameManager : MonoBehaviour
         {
             if (CharacterLeft != null)
                 CharacterLeft.Hide();
-            CharacterLeft = Instantiate(Instance.CharaPrefab, Instance.CharacterLeft_Position, Quaternion.identity);
+            CharacterLeft = Instantiate(Instance.CharaPrefab, Instance.CharacterParent.transform); //Instance.CharacterLeft_Position, Quaternion.identity);
+            CharacterLeft.transform.localPosition = Instance.CharacterLeft_Position;
+            //CharacterLeft.transform.parent = Instance.CharacterParent.transform;
         } else if (pSide == "right")
         {
             if (CharacterRight != null)
                 CharacterRight.Hide();
-            CharacterRight = Instantiate(Instance.CharaPrefab, Instance.CharacterRight_Position, Quaternion.identity);
+            CharacterRight = Instantiate(Instance.CharaPrefab, Instance.CharacterParent.transform);
             CharacterRight.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+            CharacterRight.transform.localPosition = Instance.CharacterRight_Position;
+            //CharacterRight.transform.parent = Instance.CharacterParent.transform;
         }
     }
     [YarnCommand("hide_chara")]

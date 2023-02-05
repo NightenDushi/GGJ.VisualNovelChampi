@@ -168,12 +168,15 @@ public class Character : MonoBehaviour
         CharacterSprite.EyeColor = eyeColor;
         CharacterSprite.SkinColor = skinColor;
 
-        CharacterSprite.Name = name;
+        CharacterSprite.Name = _name;
         CharacterSprite.Pronoun = pronoun;
         CharacterSprite.Gender = gender;
 
+        ScreenCapture.CaptureScreenshot($"{_name}_le_super_shroom.png");
+        Debug.Log("Screenshot enregistré!");
 
-}
+
+    }
     
     public void Shuffle()
     {

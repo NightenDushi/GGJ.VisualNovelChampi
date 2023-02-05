@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterBehaviour : MonoBehaviour
 {
     [SerializeField] Animator _anim;
-    [SerializeField] public SpriteRenderer sprite;
+    //[SerializeField] public SpriteRenderer sprite;
 
     // Start is called before the first frame update
     void Start()
