@@ -39,7 +39,8 @@ public class ColorButton : MonoBehaviour, IPointerEnterHandler
         colorPicker.gameObject.SetActive(true);
     }
 
-    public void MouseExit(){
+    public void MouseExit()
+    {
         colorPicker.gameObject.SetActive(false);
     }
 
