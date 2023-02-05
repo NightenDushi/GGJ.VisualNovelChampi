@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+
 public enum Pronoun
 {
     IL, ELLE, IEL
@@ -174,6 +176,8 @@ public class Character : MonoBehaviour
 
         ScreenCapture.CaptureScreenshot($"{_name}_le_super_shroom.png");
         Debug.Log("Screenshot enregistré!");
+
+        SceneManager.LoadScene("SampleScene");
 
 
     }

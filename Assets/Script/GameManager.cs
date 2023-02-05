@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
     }
 
     [SerializeField] CharacterBehaviour CharaPrefab;
+    [SerializeField] CharacterBehaviour PNJ1Prefab;
     static CharacterBehaviour CharacterLeft;
     static CharacterBehaviour CharacterRight;
 
@@ -73,20 +74,20 @@ public class GameManager : MonoBehaviour
 
 
     [YarnCommand("show_chara")]
-    public static void ShowCharacter(string pSide)
+    public static void ShowCharacter(string pSide, string pChara="default")
     {
         if (pSide == "left")
         {
             if (CharacterLeft != null)
                 CharacterLeft.Hide();
-            CharacterLeft = Instantiate(Instance.CharaPrefab, Instance.CharacterParent.transform); //Instance.CharacterLeft_Position, Quaternion.identity);
+            CharacterLeft = Instantiate((pChara=="default")?Instance.CharaPrefab:Instance.PNJ1Prefab, Instance.CharacterParent.transform); //Instance.CharacterLeft_Position, Quaternion.identity);
             CharacterLeft.transform.localPosition = Instance.CharacterLeft_Position;
             //CharacterLeft.transform.parent = Instance.CharacterParent.transform;
         } else if (pSide == "right")
         {
             if (CharacterRight != null)
                 CharacterRight.Hide();
-            CharacterRight = Instantiate(Instance.CharaPrefab, Instance.CharacterParent.transform);
+            CharacterRight = Instantiate((pChara == "default") ? Instance.CharaPrefab : Instance.PNJ1Prefab, Instance.CharacterParent.transform);
             CharacterRight.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
             CharacterRight.transform.localPosition = Instance.CharacterRight_Position;
             //CharacterRight.transform.parent = Instance.CharacterParent.transform;

@@ -33,6 +33,7 @@ title: start
 
 Dans le Royaume de Karotios, l’ordre phongique vacille. Un air de rébellion libère ses spores et s’étend chaque jour qui passe. 
 Menée par Phingus, venu des contrées surgelées, rien ni personne ne l’arrêtera.
+<<show_chara left>>
 Sauf peut être moi.
 J’ai été missionné par le/la Conseiller/Conseillère [InsertNamePNJ2] pour m’infiltrer parmi les rebelles.
 Après plusieurs semaines, mon cœur s’est épris de/d’ [InsertNamePNJ1].
@@ -47,6 +48,7 @@ Je dois faire un choix.
 
 title: IntroPNJ1
 ---
+<<show_chara right pnj1>>
 PNJ1 : La vie me parait si douce depuis que tu es là.
 PNJ1 :Quand que le pays connaîtra enfin la liberté promise par Phingus, nous pourrons enfin vivre notre bonheur.
 
@@ -170,6 +172,8 @@ PNJ1 : La colline du Phobby Gag. C’est là-bas que Phingus donnera l’assaut
 -> Player : Ce secret sera bien gardé. Et si jamais l’on m’interroge, je te fais la promesse que je ne saurai rien.
 	PNJ1 : Je prie pour que cela n’arrive pas.
 
+<<hide_chara left>>
+<<hide_chara right>>
 À suivre...
 ===
 
