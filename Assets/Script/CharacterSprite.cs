@@ -35,10 +35,10 @@ public class CharacterSprite: MonoBehaviour
     public static int Torso_id;
     public static int Eyebrow_id;
 
-    public static Color HatColor;
-    public static Color HatBottomColor;
-    public static Color EyeColor;
-    public static Color SkinColor;
+    public static Color HatColor = Color.white;
+    public static Color HatBottomColor = Color.white;
+    public static Color EyeColor = Color.white;
+    public static Color SkinColor = Color.white;
 
     public static string Name;
     public static Pronoun Pronoun;

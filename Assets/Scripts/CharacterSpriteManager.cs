@@ -17,6 +17,11 @@ public class CharacterSpriteManager : MonoBehaviour
     public Image HatSprite;
     public Image HatBottomSprite;
 
+    private void Start()
+    {
+        UpdateSprite();
+        UpdateColors();
+    }
     public void UpdateSprite()
     {
         Texture2D t;

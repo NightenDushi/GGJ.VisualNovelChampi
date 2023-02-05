@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028355, g: 0.22571374, b: 0.30692255, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -484,15 +484,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4256812490460680828, guid: 0ae462b212bb1734488700b2f9d5aad3, type: 3}
       propertyPath: defaultColor.b
-      value: 0.33333334
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4256812490460680828, guid: 0ae462b212bb1734488700b2f9d5aad3, type: 3}
       propertyPath: defaultColor.g
-      value: 0.33333334
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4256812490460680828, guid: 0ae462b212bb1734488700b2f9d5aad3, type: 3}
       propertyPath: defaultColor.r
-      value: 0.7882353
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4256812490460680828, guid: 0ae462b212bb1734488700b2f9d5aad3, type: 3}
       propertyPath: onColorChange.m_PersistentCalls.m_Calls.Array.size
@@ -608,7 +608,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4256812490460680831, guid: 0ae462b212bb1734488700b2f9d5aad3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -154.6
+      value: -100.600006
       objectReference: {fileID: 0}
     - target: {fileID: 4256812490460680831, guid: 0ae462b212bb1734488700b2f9d5aad3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -809,7 +809,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -67.77203, y: 31}
+  m_AnchoredPosition: {x: -67.77203, y: -23}
   m_SizeDelta: {x: 119.5446, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &318144729
@@ -961,7 +961,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 162, y: -72.09999}
+  m_AnchoredPosition: {x: 162, y: -12}
   m_SizeDelta: {x: 70.627, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &407118047
@@ -1177,9 +1177,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 1
-  m_ReferencePixelsPerUnit: 53.5
+  m_ReferencePixelsPerUnit: 35.8
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 640, y: 360}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1430,15 +1430,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4256812490460680828, guid: 0ae462b212bb1734488700b2f9d5aad3, type: 3}
       propertyPath: defaultColor.b
-      value: 0.6313726
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4256812490460680828, guid: 0ae462b212bb1734488700b2f9d5aad3, type: 3}
       propertyPath: defaultColor.g
-      value: 0.5882353
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4256812490460680828, guid: 0ae462b212bb1734488700b2f9d5aad3, type: 3}
       propertyPath: defaultColor.r
-      value: 0.34117648
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4256812490460680828, guid: 0ae462b212bb1734488700b2f9d5aad3, type: 3}
       propertyPath: onColorChange.m_PersistentCalls.m_Calls.Array.size
@@ -1542,7 +1542,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4256812490460680831, guid: 0ae462b212bb1734488700b2f9d5aad3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -154.6
+      value: -100.600006
       objectReference: {fileID: 0}
     - target: {fileID: 4256812490460680831, guid: 0ae462b212bb1734488700b2f9d5aad3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1593,7 +1593,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 221.06, y: -216.17}
+  m_AnchoredPosition: {x: 221.06, y: -183}
   m_SizeDelta: {x: 92.893, y: 14.044}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &500188171
@@ -1872,7 +1872,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 228.41101, y: -72.100006}
+  m_AnchoredPosition: {x: 228.41101, y: -12.0000305}
   m_SizeDelta: {x: 324.698, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &555625636
@@ -2107,6 +2107,7 @@ GameObject:
   - component: {fileID: 604733382}
   - component: {fileID: 604733381}
   - component: {fileID: 604733380}
+  - component: {fileID: 604733383}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2180,6 +2181,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &604733383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604733379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1001 &642562044
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2193,15 +2227,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4256812490460680828, guid: 0ae462b212bb1734488700b2f9d5aad3, type: 3}
       propertyPath: defaultColor.b
-      value: 0.33333334
+      value: 0.22467959
       objectReference: {fileID: 0}
     - target: {fileID: 4256812490460680828, guid: 0ae462b212bb1734488700b2f9d5aad3, type: 3}
       propertyPath: defaultColor.g
-      value: 0.33333334
+      value: 0.22467959
       objectReference: {fileID: 0}
     - target: {fileID: 4256812490460680828, guid: 0ae462b212bb1734488700b2f9d5aad3, type: 3}
       propertyPath: defaultColor.r
-      value: 0.7882353
+      value: 0.9339623
       objectReference: {fileID: 0}
     - target: {fileID: 4256812490460680828, guid: 0ae462b212bb1734488700b2f9d5aad3, type: 3}
       propertyPath: onColorChange.m_PersistentCalls.m_Calls.Array.size
@@ -2317,7 +2351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4256812490460680831, guid: 0ae462b212bb1734488700b2f9d5aad3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -154.6
+      value: -100.600006
       objectReference: {fileID: 0}
     - target: {fileID: 4256812490460680831, guid: 0ae462b212bb1734488700b2f9d5aad3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2959,8 +2993,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1029621472}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.10165}
+  m_LocalScale: {x: 0.79671, y: 0.79671, z: 0.79671}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 318144728}
@@ -2979,13 +3013,14 @@ RectTransform:
   - {fileID: 1369740897}
   - {fileID: 1287404322}
   - {fileID: 243453940}
+  - {fileID: 1451860494}
   - {fileID: 500188170}
   m_Father: {fileID: 430772655}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -287.77808, y: 0}
+  m_AnchoredPosition: {x: -234.8, y: -4.3876}
   m_SizeDelta: {x: 577.6561, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1029621474
@@ -3592,15 +3627,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4256812490460680828, guid: 0ae462b212bb1734488700b2f9d5aad3, type: 3}
       propertyPath: defaultColor.b
-      value: 0.43529412
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4256812490460680828, guid: 0ae462b212bb1734488700b2f9d5aad3, type: 3}
       propertyPath: defaultColor.g
-      value: 0.87058824
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4256812490460680828, guid: 0ae462b212bb1734488700b2f9d5aad3, type: 3}
       propertyPath: defaultColor.r
-      value: 0.83137256
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4256812490460680828, guid: 0ae462b212bb1734488700b2f9d5aad3, type: 3}
       propertyPath: onColorChange.m_PersistentCalls.m_Calls.Array.size
@@ -3704,7 +3739,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4256812490460680831, guid: 0ae462b212bb1734488700b2f9d5aad3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -156
+      value: -102
       objectReference: {fileID: 0}
     - target: {fileID: 4256812490460680831, guid: 0ae462b212bb1734488700b2f9d5aad3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4843,7 +4878,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -201, y: 31}
+  m_AnchoredPosition: {x: -201, y: -24}
   m_SizeDelta: {x: 119.5446, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1957491283
@@ -4950,6 +4985,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2033948490}
   - component: {fileID: 2033948489}
+  - component: {fileID: 2033948491}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -5034,6 +5070,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &2033948491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033948488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1001 &2062498858
 PrefabInstance:
   m_ObjectHideFlags: 0
