@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+public enum Pronoun
+{
+    IL, ELLE, IEL
+}
 
 public class Character : MonoBehaviour
 {   
@@ -9,10 +13,6 @@ public class Character : MonoBehaviour
     public UnityEvent onUpdateSprite;
     public UnityEvent onUpdateColors;
     
-    private enum Pronoun
-    {
-        IL, ELLE, IEL
-    }
 
     private int hatId;
     private Color hatColor = Color.white;
@@ -146,8 +146,27 @@ public class Character : MonoBehaviour
 
     public void Confirm()
     {
-        logInfos();
-    }
+
+
+        CharacterSprite.HeadType_id = headId;
+        CharacterSprite.BodyType_id = bodyTypeId;
+        CharacterSprite.Hat_id = hatId;
+        CharacterSprite.Eye_id = eyeShapeId;
+        CharacterSprite.Nose_id = noseId;
+        CharacterSprite.Mouth_id = mouthId;
+        CharacterSprite.Torso_id = torsoId;
+        CharacterSprite.Eyebrow_id = torsoId;
+
+        CharacterSprite.HatColor = hatColor;
+        CharacterSprite.EyeColor = eyeColor;
+        CharacterSprite.SkinColor = skinColor;
+
+        CharacterSprite.Name = name;
+        CharacterSprite.Pronoun = pronoun;
+        CharacterSprite.Gender = gender;
+
+
+}
     
     public void Shuffle()
     {
