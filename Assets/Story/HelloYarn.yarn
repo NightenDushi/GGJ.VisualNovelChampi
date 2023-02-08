@@ -35,12 +35,12 @@ Dans le Royaume de Karotios, l’ordre phongique vacille. Un air de rébellion l
 Menée par Phingus, venu des contrées surgelées, rien ni personne ne l’arrêtera.
 <<show_chara left>>
 Sauf peut être moi.
-J’ai été missionné par le/la Conseiller/Conseillère [InsertNamePNJ2] pour m’infiltrer parmi les rebelles.
-Après plusieurs semaines, mon cœur s’est épris de/d’ [InsertNamePNJ1].
+J’ai été missionné par le/la Conseiller/Conseillère PNJ2 pour m’infiltrer parmi les rebelles.
+Après plusieurs semaines, mon cœur s’est épris de PNJ1.
 Certes, elle est un/une rebelle. 
 Les champignons ont leur raison que la moisissure n’explique pas.
 Mais maintenant, je dois repartir.
-Je dois informer [InsertNamePNJ1] des informations que j’ai récupéré sur la rébellion.
+Je dois informer PNJ1 des informations que j’ai récupéré sur la rébellion.
 Je dois faire un choix.
 
 <<jump IntroPNJ1>>
