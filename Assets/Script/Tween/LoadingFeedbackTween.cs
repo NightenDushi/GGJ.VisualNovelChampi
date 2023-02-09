@@ -11,10 +11,8 @@ public class LoadingFeedbackTween : MonoBehaviour
     private void OnEnable()
     {
         Debug.Log("Enable");
-        DOVirtual.Float(0.0f, 0.9f, 0.5f, a => {
-            Debug.Log(a);
-            _render.color = new Color(0f, 0f, 0f, a);
-        }).SetEase(Ease.OutBack);
+        _render.color = new Color(0f, 0f, 0f, 0f);
+        _render.DOColor(new Color(0f, 0f, 0f, 0.9f), 0.8f).SetEase(Ease.OutBack);
         
     }
 
