@@ -193,10 +193,10 @@ public class Character : MonoBehaviour
         noseId = Random.Range(0, CharacterSprite.NoseList.Length);
         eyebrowId = Random.Range(0, CharacterSprite.EyebrowList.Length);
 
-        eyeColor = Random.ColorHSV(0f, 1f, 0f, 1f, 0f, 0.8f, 1f,1f);
-        skinColor = Random.ColorHSV(0f, 1f, 0f, 1f, 0f, 0.8f, 1f, 1f);
-        hatColor = Random.ColorHSV(0f, 1f, 0f, 1f, 0f, 0.8f, 1f, 1f);
-        hatBottomColor = Random.ColorHSV(0f, 1f, 0f, 1f, 0f, 0.8f, 1f, 1f);
+        eyeColor = Random.ColorHSV(0f, 1f, 0f, 1f, 0.2f, 1f, 1f,1f);
+        skinColor = Random.ColorHSV(0f, 1f, 0f, 1f, 0.2f, 1f, 1f, 1f);
+        hatColor = Random.ColorHSV(0f, 1f, 0f, 1f, 0.2f, 1f, 1f, 1f);
+        hatBottomColor = Random.ColorHSV(0f, 1f, 0f, 1f, 0.2f, 1f, 1f, 1f);
 
         UpdateSprite();
         UpdateColors();
