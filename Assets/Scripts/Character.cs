@@ -177,9 +177,7 @@ public class Character : MonoBehaviour
         ScreenCapture.CaptureScreenshot($"{_name}_le_super_shroom.png");
         Debug.Log("Screenshot enregistré!");
 
-        SceneManager.LoadScene("SampleScene");
-
-
+        SceneManager.LoadSceneAsync("SampleScene");
     }
     
     public void Shuffle()
@@ -195,6 +193,9 @@ public class Character : MonoBehaviour
         noseId = Random.Range(0, CharacterSprite.NoseList.Length);
         eyebrowId = Random.Range(0, CharacterSprite.EyebrowList.Length);
 
+        eyeColor = Random.ColorHSV();
+        skinColor = Random.ColorHSV();
+        hatBottomColor = Random.ColorHSV();
 
         UpdateSprite();
         UpdateColors();

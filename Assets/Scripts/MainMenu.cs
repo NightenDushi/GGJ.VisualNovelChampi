@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
 
     public void Begin()
     {
-        SceneManager.LoadScene("CharMaker");
+        SceneManager.LoadSceneAsync("CharMaker");
     }
 
     public void Quit()
