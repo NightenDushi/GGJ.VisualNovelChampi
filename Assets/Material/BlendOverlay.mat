@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BlendMultiply
+  m_Name: BlendOverlay
   m_Shader: {fileID: -6465566751694194690, guid: c25945c2a53a0f245b70be3ceddd3377, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []

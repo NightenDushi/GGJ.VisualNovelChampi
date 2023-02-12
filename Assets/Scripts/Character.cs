@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public enum Pronoun
 {
@@ -13,7 +15,9 @@ public class Character : MonoBehaviour
 {   
 
     public UnityEvent onUpdateSprite;
+    static public event Action onUpdateSpriteEvent;
     public UnityEvent onUpdateColors;
+    static public event Action onUpdateColorsEvent;
     
 
     private int hatId;
@@ -41,24 +45,14 @@ public class Character : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Shuffle();
+        ShuffleElements();
+        ShuffleColors();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
-    public void ChangePronoun(int newPronoun)
-    {
-        this.pronoun = ((Pronoun) newPronoun);
-    }
+    public void ChangePronoun(int newPronoun) => this.pronoun = ((Pronoun)newPronoun);
 
-    public void ChangeName(string newName)
-    {
-        this._name = newName;
-    }
+    public void ChangeName(string newName) => this._name = newName;
 
     public void ChangeBodyType(int newBodyType)
     {
@@ -141,6 +135,7 @@ public class Character : MonoBehaviour
         CharacterSprite.Eyebrow_id = eyebrowId;
 
         onUpdateSprite.Invoke();
+        onUpdateSpriteEvent?.Invoke();
     }
 
     void UpdateColors()
@@ -151,6 +146,7 @@ public class Character : MonoBehaviour
         CharacterSprite.SkinColor = skinColor;
 
         onUpdateColors.Invoke();
+        onUpdateColorsEvent?.Invoke();
     }
 
     public void Confirm()
@@ -180,7 +176,7 @@ public class Character : MonoBehaviour
         SceneManager.LoadSceneAsync("SampleScene");
     }
     
-    public void Shuffle()
+    public void ShuffleElements()
     {
         Debug.Log("Shuffle...");
 
@@ -193,12 +189,16 @@ public class Character : MonoBehaviour
         noseId = Random.Range(0, CharacterSprite.NoseList.Length);
         eyebrowId = Random.Range(0, CharacterSprite.EyebrowList.Length);
 
-        eyeColor = Random.ColorHSV(0f, 1f, 0f, 1f, 0.2f, 1f, 1f,1f);
-        skinColor = Random.ColorHSV(0f, 1f, 0f, 1f, 0.2f, 1f, 1f, 1f);
-        hatColor = Random.ColorHSV(0f, 1f, 0f, 1f, 0.2f, 1f, 1f, 1f);
-        hatBottomColor = Random.ColorHSV(0f, 1f, 0f, 1f, 0.2f, 1f, 1f, 1f);
-
         UpdateSprite();
+    }
+
+    public void ShuffleColors()
+    {
+        float minValue = 0.2f;
+        eyeColor = Random.ColorHSV(0f, 1f, 0f, 1f, minValue, 1f, 1f, 1f);
+        skinColor = Random.ColorHSV(0f, 1f, 0f, 1f, minValue, 1f, 1f, 1f);
+        hatColor = Random.ColorHSV(0f, 1f, 0f, 1f, minValue, 1f, 1f, 1f);
+        hatBottomColor = Random.ColorHSV(0f, 1f, 0f, 1f, minValue, 1f, 1f, 1f);
         UpdateColors();
     }
 

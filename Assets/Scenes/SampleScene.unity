@@ -471,8 +471,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharaPrefab: {fileID: 3271502518623396660, guid: ef0aa65791547da41bd9417119e2fcc5, type: 3}
   PNJ1Prefab: {fileID: 3271502518623396660, guid: 109e57d6a3fe43b4d90f4696ab75fa51, type: 3}
-  CharacterLeft_Position: {x: -200, y: -60, z: 0}
-  CharacterRight_Position: {x: 200, y: -60, z: 0}
+  CharacterLeft_Position: {x: -200, y: -25, z: 0}
+  CharacterRight_Position: {x: 200, y: -25, z: 0}
   CharacterParent: {fileID: 1177034134}
 --- !u!4 &1340982204
 Transform:

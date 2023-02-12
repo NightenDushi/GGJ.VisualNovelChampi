@@ -13,6 +13,13 @@ public class ColorButton : MonoBehaviour, IPointerEnterHandler
     private FlexibleColorPicker colorPicker;
     private Color color;
 
+    public enum ColorPart
+    {
+        HAT, HAT_BOTTOM, EYES, BODY
+    }
+
+    public ColorPart Part;
+
     // Start is called before the first frame update
     void Start()
     {   
@@ -24,10 +31,33 @@ public class ColorButton : MonoBehaviour, IPointerEnterHandler
         onColorChange.Invoke(defaultColor); //Set the default color
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable() => Character.onUpdateColorsEvent += UpdateColor;
+    private void OnDisable() => Character.onUpdateColorsEvent -= UpdateColor;
+
+
+    private void UpdateColor() //Update the color after external changes
     {
-        
+        Color newColor;
+        switch (Part)
+        {
+            case ColorPart.HAT:
+                newColor = CharacterSprite.HatColor;
+                break;
+            case ColorPart.HAT_BOTTOM:
+                newColor = CharacterSprite.HatBottomColor;
+                break;
+            case ColorPart.EYES:
+                newColor = CharacterSprite.EyeColor;
+                break;
+            case ColorPart.BODY:
+                newColor = CharacterSprite.SkinColor;
+                break;
+            default:
+                newColor = color;
+                break;
+        }
+
+        SetColor(newColor);
     }
 
     private void SetColor(Color color)

@@ -40,29 +40,50 @@ public class Selector : MonoBehaviour
         {
             textureNames.Add(TextureName(t));
         }
+        currentTextureId = GetBodyPartId();
 
         UpdateText();
+    }
+    private void OnEnable() => Character.onUpdateSpriteEvent += UpdateText;
+    private void OnDisable() => Character.onUpdateSpriteEvent -= UpdateText;
+
+    int GetBodyPartId()
+    {
+        switch (part)
+        {
+            case Part.BODY: return CharacterSprite.BodyType_id;
+            case Part.HEAD: return CharacterSprite.HeadType_id;
+            case Part.HAT: return CharacterSprite.Hat_id;
+            case Part.EYES: return CharacterSprite.Eye_id;
+            case Part.NOSE: return CharacterSprite.Nose_id;
+            case Part.EYEBROWS: return CharacterSprite.Eyebrow_id;
+            case Part.TORSO: return CharacterSprite.Torso_id;
+            case Part.MOUTH: return CharacterSprite.Mouth_id;
+            default:
+                return currentTextureId; //Should not be reached, but just in case
+        }
     }
 
     public void leftClicked()
     {   
         currentTextureId = mod(currentTextureId - 1, textureNames.Count);
-        UpdateText();
-
+        
         onValueChanged.Invoke(currentTextureId);
+        UpdateText();
     }
 
     public void rightClicked()
     {
         currentTextureId = mod(currentTextureId + 1, textureNames.Count);
-        UpdateText();
                 
         onValueChanged.Invoke(currentTextureId);
+        UpdateText();
     }
 
     void UpdateText()
     {
-        transform.GetChild(0).GetComponent<TextMeshProUGUI>().SetText(textureNames[currentTextureId]);
+        currentTextureId = GetBodyPartId();
+        transform.GetChild(0).GetComponent<TextMeshProUGUI>().SetText(textureNames[currentTextureId]); //TODO(Nighten) Replace this get() by a serialized field
     }
 
     //Modulo qui évite de sortir des valeurs négatives
