@@ -1,0 +1,408 @@
+﻿title: demo_start
+---
+<<set $minigame_result to 0>>
+<<set $minigame_callback to "start">>
+
+<<show_chara left>>
+Champi:Hello! 
+
+<<hide_chara left>>
+I can hide! 
+
+<<show_chara right>>
+Come back! 
+
+<<show_chara right>>
+And be replaced! 
+
+-> Let's run the minigame! 
+	<<set $minigame_callback to "MinigameResult">>
+	<<minigame Minijeux1>>
+-> Incredible! 
+===
+
+title: MinigameResult
+---
+Your score is {$minigame_result}! 
+===
+
+title: start
+---
+<<set $Intel to 0>>
+<<set $gender to "nb">>
+<<set $name to "You">>
+<<set $Mefiance to 0>>
+<<set $Confiance to 0>>
+<<set $Revelation to 0>>
+
+<<SetVariable>>
+
+Dans le Royaume de Karotios, l’ordre phongique vacille. Un air de rébellion libère ses spores et s’étend chaque jour qui passe.  
+Menée par Phingus, venu des contrées surgelées, rien ni personne ne l’arrêtera. 
+<<show_chara left>>
+Sauf peut être moi. 
+J’ai été missionné par la Conseillère PNJ2 pour m’infiltrer parmi les rebelles. 
+Après plusieurs semaines, mon cœur s’est épris de PNJ1. 
+Certes, elle est un/une rebelle.  
+Les champignons ont leur raison que la moisissure n’explique pas. 
+Mais maintenant, je dois repartir. 
+Je dois informer PNJ1 des informations que j’ai récupéré sur la rébellion. 
+Je dois faire un choix. 
+
+<<jump IntroPNJ1>>
+===
+
+title: IntroPNJ1
+---
+<<show_chara right pnj1>>
+PNJ1 : La vie me parait si douce depuis que tu es là. 
+PNJ1 :Quand que le pays connaîtra enfin la liberté promise par Phingus, nous pourrons enfin vivre notre bonheur. 
+
+===
+
+title: IntroPNJ1_choice
+---
+-> Player : Phingus… Crois-tu réellement qu’il apportera la liberté ? Comme tous ceux qui dirige, les promesses ne sont bonnes qu’à nous rendre aveugle. 
+	PNJ 1 : Il faut toujours croire en un avenir meilleur, non ? Sinon à quoi bon se répandre sans but ? 
+	<<jump Espoir>>
+-> Player : Je… Je crois que j’ai hâte de ce bonheur. 
+	PNJ 1 : J’ai un peu peur de ce qu’il se passera entretemps. Penses-tu que les combats seront violents ? Y aura-t-il des morts ? 
+	<<jump Avenir>>
+-> Player : Je ne suis peut-être pas celui/celle que tu penses. 
+	PNJ 1 : … 
+	PNJ1 : Je ne suis pas sûr de comprendre. 
+	<<jump Aveux>>
+-> Player : Il est temps pour moi de partir quelque temps. 
+	PNJ1 : Comment ? 
+	PNJ1 : Pourquoi ? 
+	<<jump OutPNJ1>>
+===
+
+title: Espoir
+---
+-> Player : Il faut toujours avoir l’espoir. L’espoir de combattre pour une vie meilleure. 
+	PNJ 1 : Peut-être que nous iront voyager loin, en-dehors de nos contrées. Peut-être que nous pourrions même retourner dans les terres surgelées ! 
+	<<set $Intel=$Intel+0.5>>
+	<<jump IntroPNJ1_choice>>
+-> Player : L’espoir d’un avenir meilleur est vain. Nous ne pouvons compter que sur nous-même. 
+	PNJ 1 : Ta vision est triste et sombre… Mais c’est peut-être aussi la réalité des choses. 
+	PNJ 1 : … 
+	PNJ 1 : Je crois que cela me fait peur. 
+	<<jump Avenir>>
+-> Player : J’aimerai te dire autre chose. 
+	<<jump IntroPNJ1_choice>>
+===
+
+title: Avenir
+---
+-> Player : Reste fort/forte. Les semaines à venir seront sombres et peut-être sanglante. Mais sans combat, rien ne change. 
+	 <<jump IntroPNJ1_choice>>
+-> Player : Je comprends tes craintes. Mais je ferai tout pour te protéger. Je te le promets. 
+	PNJ 1 : J’ai confiance en toi. Je sais que je peux compter sur toi. 
+	<<set $Intel=$Intel+0.5>>
+	<<if $Intel>=1>>
+		<<jump OutIntel>>
+	<<else>>
+		<<jump IntroPNJ1_choice>>
+	<<endif>>
+-> Player : J’aimerai te dire autre chose. 
+	 <<jump IntroPNJ1_choice>>
+===
+
+title: Aveux
+---
+-> Player : Je t’ai menti durant tout ce temps. Je travaille en réalité pour le Royaume. 
+	PNJ1 : C’était trop beau pour être vrai. 
+	PNJ1 : Et maintenant ? Qu’est-ce que tu attends ? 
+	<<jump Séparation>>
+-> Player : J’ai une famille qui vit dans le Royaume. Avec une femme, et deux enfants. 
+	PNJ1 : Comme beaucoup d’autres ici.  
+	PNJ1 : Et nous avons justement l’occasion de fonder de nouveaux modèles ! PNJ1 : Nous pourrions nous émanciper de ce monde archaïque… 
+-> Player : Tu dois avoir raison. Nous pouvons faire de demain le début d’une nouvelle ère. 
+	<<set $Intel=$Intel+0.5>>
+	<<if $Intel>=1>>
+		<<jump OutIntel>>
+	<<else>>
+		<<jump IntroPNJ1_choice>>
+	<<endif>>
+-> Player : Non. Mon cœur se déchire à l’idée de faire souffrir ceux qui ont construit ma vie. 
+	PNJ1 : C’était trop beau pour être vrai. 
+	PNJ1 : Et maintenant ? Qu’est-ce que tu attends ? 
+	<<jump Separation>>
+===
+title: Separation
+---
+-> Player: De toi ? Plus rien. Tu n’étais qu’un pion. Ton seul salut est de revenir à la réalité. 
+	PNJ1 : Tu es immonde ! 
+	PNJ1 : Moi qui pensais qu’il était possible de construire de quelque chose avec toi. 
+	PNJ1 : La rébellion te trouvera et j’espère être celle qui te tranchera en lamelles. 
+-> Player: Si je veux te sauver, il faut que tu me dises tout ce qui est important au sujet de Phingus. 
+	PNJ1 : Tu me demandes de trahir la cause ? 
+	Player : Oui. Pour l’amour que nous nous portons. 
+	PNJ1 : L’amour a bon dos. Et on ne fait pas tout par amour. 
+	PNJ1 : Tu ne mérites rien. Part ! 
+-> Player : Je ne suis ni pour la Rébellion, ni pour le Royaume. La vie doit être un équilibre que ni l’un ni l’autre ne peut offrir. 
+	PNJ1 : … 
+	PNJ1 : Je ne peux pas t’en vouloir car je n’en pense pas moins. 
+	PNJ1 : Mais tu aurais dû m’en parler depuis le début. J’aurais compris. 
+	Player : Et tu aurais très bien pu me tuer durant mon sommeil. 
+	PNJ1 : Tu me fais rêver, vivre et espérer. Et je veux croire en toi.  
+	<<set $Intel=$Intel+0.5>>
+<<if $Intel>=1>>
+	<<jump OutIntel>>
+<<else>>
+	<<jump IntroPNJ1_choice>>
+<<endif>>
+===
+
+title: OutPNJ1
+---
+
+-> Player : Je suis un espion à la solde de Karotios. 
+	PNJ1 : Quoi ?! Comment ? Tu ne pas fait ça ?  
+	PNJ1 : … 
+	PNJ1 : Finalement, la vie n’est que le mensonge que l’on veut bien se raconter. 
+	PNJ1 : Part, maintenant. Tu n’as plus rien pour toi, ici. 
+-> Player : Hm… J’aimerai voir mes parents avant que la rébellion n’éclate. 
+	PNJ1 : Ho… Je comprends. 
+	PNJ1 : Tu dois avoir peur pour eux. Si tu le souhaites, nous pourrions les accueillir. 
+	PNJ1 : Eux-aussi ont droit d’être plus libre qu’ils ne le sont. 
+-> Player : Pour moi, l’important, c’est toi. Et je dois partir pour te protéger. 
+	PNJ1 : Je crois que tu te prends pour ces chevaliers phongiques que rien n’arrête. 
+	PNJ1 : C’est rare et… étrangement plaisant. 
+	PNJ1 : Mais je ne t’attendrait pas éternellement. 
+<<jump TransitionPNJ2>>
+===
+
+title: OutIntel
+---
+PNJ1 : La colline du Phobby Gag. C’est là-bas que Phingus donnera l’assaut. C’est la chose la plus importante à savoir. 
+
+-> Player : Ha ! Petit sot/Petite sotte ! Merci de l’information gratuite. Le Royaume en sera satisfait ! Moi, je te laisserai crever ici. 
+	PNJ1 : Mais ?! 
+-> Player : Ce secret sera bien gardé. Et si jamais l’on m’interroge, je te fais la promesse que je ne saurai rien. 
+	PNJ1 : Je prie pour que cela n’arrive pas. 
+
+<<jump TransitionPNJ2>>
+===
+
+title: TransitionPNJ2
+---
+<<hide_chara left>>
+<<hide_chara right>>
+[Rencontre avec PNJ2]
+
+===
+
+title : IntroPNJ2
+---
+<<show_chara left>>
+<<show_chara right>>
+PNJ 2 : Ha ! 
+PNJ 2 : {$name}.  
+PNJ 2 : Tu es enfin de retour. 
+PNJ 2 : Sache que je suis soulagé que ces rebelles ne t’aient pas démasqué. 
+PNJ 2 : Alors, comment te sens-tu ? 
+-> Player : Amoureux… 
+	PNJ 2 : … 
+	PNJ 2 : Amoureux… 
+	PNJ 2 : Amoureux d’une rebelle ? Amoureux de cette rébellion ? As-tu perdu la volve ?! 
+	<<jump Amour>>
+-> Player : Est-on sûr que la motivation de ces rebelles est dénuée de sens ? 
+	PNJ 2 : Hm… C’est un acte sage que d’interroger l’intention de ses actions.  
+	PNJ 2 : Qu’as-tu pu apprendre qui te fasse douter ? 
+	<<jump Doute>>
+-> Player : Bien. Servir ce royaume a toujours été mon objectif premier. Rien ni personne ne m’en aurait écarté. 
+	PNJ 2 : C’est pourquoi je te considère presque comme mon fils. 
+	PNJ 2 : Tu fais honneur à ton royaume. 
+	PNJ 2 : Et tu me fais honneur par-dessus tout. 
+	PNJ 2 : Tu n’as rencontré aucun problème ? 
+	<<jump Problème>>
+-> Player : J'ai, ici, toutes les informations pour déjouer les plans des rebelles. 
+	PNJ 2 : Vraiment ? 
+	PNJ 2 : Le roi en sera ravit. Tout autant que moi, assurément ! 
+	<<jump Rapport>>
+-> Player : J'ai l'impression que tu me caches quelque chose... <<if $Intel>=1>> 
+	PNJ 2 : Mes talents à la cour se sont-ils autant érodés que ça ? 
+	PNJ 2 : Ou peut-être que c'est toi qui commence à me surpasser. 
+	PNJ 2 : Quoi qu'il en soit... 
+	PNJ 2 : Le roi détient ta famille. 
+	<<jump Famille>>
+-> Player : Assez. Il est temps d'en finir avec tout ça. 
+	<<jump OutroPNJ2>>
+===
+
+title : Amour
+---
+-> Oui, d'une rebelle. Et je pense que toi seul ici peut me comprendre. 
+	PNJ 2 : ... 
+	PNJ 2 : C'est ce que je craignais. 
+	PNJ 2 : Et tu penses que cette histoire se terminera bien ? 
+	PNJ 2 : Nous ne sommes plus dans un monde qui laisse place aux simplicités de la vie. 
+	PNJ 2 : Et même l'amour n'est rien devant les bottes de fer des rois et des reines. 
+	PNJ 2 : ... 
+	PNJ 2 : Mais je ne te trahirai pas. Ne serait-ce que pour l'empathie que j'ai pour toi. 
+		-> Je savais que tu me comprendrais ! 
+		PNJ 2 : Ai-je vraiment le choix ?  
+		PNJ 2 : Je te considère comme mon enfant. 
+		PNJ 2 : Je ne peux pas me résoudre à balayer froidement les mots du coeur. 
+		<<set $Confiance to $Confiance+1>>
+		<<set $Intel to $Intel+0.5>>
+		<<jump IntroPNJ2>>
+		-> Je n'étais pas sûr de pouvoir tout te dire... J'espère que je ne me suis pas [select {$gender} m="trompé" f="trompée" nb="trompé.e"]. 
+		PNJ 2 : Cela me blesse que tu n'aies pas une confiance aveugle en moi. 
+		PNJ 2 : Mais d'un côté je peux comprendre. 
+		PNJ 2 : Sâches que je suis transparent avec toi.  
+		<<set $Intel to $Intel+0.5>>
+		<<jump IntroPNJ2>>
+-> Les idées qu'ils défendent... Toutes ne sont pas dénuées de sens. 
+	PNJ 2 : Toutes les idées se défendent. 
+	PNJ 2 : Mais tous dépend comment on les défend. 
+	PNJ 2 : Et il faut savoir être réaliste. Faire partie de ceux qui vivent avec leur époque. 
+		-> Tu fais partie du vieux monde et tu mérites peut-être de finir écrasé dans ses ruines. 
+			PNJ 2 : C'est donc comme ça que tu traites ceux qui t'ont tout donné ? 
+			PNJ 2 : Je vais faire comme si tu l'avais seulement pensé. 
+			PNJ 2 : Mais ne me manque plus de respect. 
+			<<set $Mefiance to $Mefiance+0.5>>
+			<<jump IntroPNJ2>>
+		-> Effectivement. À une autre époque, leur combat serait peut-être plus honorable. 
+			PNJ 2 : Mais cette époque n'est peut être juste pas encore arrivée.  
+			PNJ 2 : Bon nombre de révolutionnaire était en avance sur leur temps. 
+			PNJ 2 : Mais qui pourrait dire si c'est leur mort en martyre qui a donné un souffle de vie à leurs convictions ? 
+		<<jump IntroPNJ2>>
+-> Non, ce n'est pas ça. Mais j'ai tout de même peur que rien ne sera comme avant après cette rébellion. 
+	PNJ 2 : La guerre est une chose qui sera toujours terrifiante. 
+	PNJ 2 : Crois-en le vieux fongique que je suis, les prochaines années seront rudes. 
+	PNJ 2 : Mais je serai là pour t'épauler. 
+	-> Merci. Au fond, ça me rassure que je puisse compter sur toi. 
+		<<set $Confiance to $Confiance+1>>
+		<<jump IntroPNJ2>>
+	-> Hm... Si tu le dis... 
+		<<jump IntroPNJ2>>
+-> Player : J’aimerai te dire autre chose. 
+	<<jump IntroPNJ2>>
+===
+
+title: Doute
+---
+-> Leurs motivations... ne sont pas dépourvues de sens. La liberté devrait être fondamentale ! 
+	PNJ 2 : Je suis d'accord. Toutefois, la liberté des uns s'arrête là où celle des autres commence. 
+	PNJ 2 : On ne peut pas espérer vivre en grand nombre sans qu'il y ait des règles strictes. 
+	Player : Mais n'y a-t-il pas des règles qui favorisent ceux qui nous gouvernent au détriment des gourvernés ? 
+	PNJ 2 : Hé bien... Peut-être mais... 
+	Player : Ou alors tu ne le vois pas car tu fais parties des privilégiés. 
+	PNJ 2 : Certes. On ne voit pas ce qui ne nous affecte pas... 
+	<<set $Revelation to $Revelation+0.5>>
+	<<jump Doute>>
+-> C'est la vue de tous ces gens qui se rebellent. Femmes, adolescents, vieillards... Et de toutes conditions. 
+	PNJ 2 : Les plus grands orateurs feraient bouger des cités entières tant leurs arguments sont convaiquants. 
+	PNJ 2 : Peut-on se fier aux chefs d'une révolution qui promet d'être sanglante ? 
+	-> Oui, car ils sont aux premières loges de ce qui rend le monde si injuste. 
+		PNJ 2 : Pas toujours ! 
+		PNJ 2 : Les régicides et autres fauteurs de troubles qui ont obtenu des postes importants ne sont pas à louanger. 
+		PNJ 2 : Loin de moi à l'idée de dire que tout ce qui va à l'encontre du royaume est mauvais... 
+		PNJ 2 : Ces rebelles ne font pas les choses comme il se doit. 
+		<<jump Doute>>
+	-> Je ne sais pas... Toute personne qui a une motivation a des raisons de l'incarner. 
+		PNJ 2 : Dans ce cas, notre roi a des raisons valables de mater cette révolution. 
+		Player : Mais connait-il seulement les véritables tenants et aboutissants de cette rébellion ? 
+		PNJ 2 : Il y a fort à parier que non... Mais il revient à lui de s'y intéresser. 
+		Player : Donc le roi n'a que faire de ses sujets. Pour lui, ce ne sont que des gens mécontants. 
+		PNJ 2 : Même le plus grand des rois ou la plus grande des reines ne peut s'occuper de tout un royaume. 
+		Player : La faute revient donc aux conseillers. Et tu me diras qu'eux non plus ne pourraient pas tout appréhender. 
+		Player : Et on peut continuer la liste jusqu'en bas de l'échelle. 
+		Player : Finalement, il y a une rebellion à cause des rebelles. 
+		Player : Sauf ton respect, le calcul n'est pas bon... 
+		PNJ 2 : Je... Mh... La faute est fongique, tu as raison... 
+		<<set $Revelation to $Revelation+0.5>>
+		<<jump Doute>>
+	-> Bien sûr que non. Mais peut-être devrions nous fier à certains et certains qui font partie de leurs rangs. 
+		PNJ 2 : N'auront-ils pas l'esprit embrouillé par les dires de leurs dirigeants ? 
+		Player : Pas tous ! Certains ou certaines, peuvent avoir une vision différente, plus pure, moins drastique. 
+		PNJ 2 : Allons, allons ! J'ai tout de même de gros doutes. Et tu ne me feras pas changer d'avis. 
+		<<jump Doute>>
+-> Player : J’aimerai te dire autre chose. 
+	<<jump IntroPNJ2>>
+===
+
+title: Problème
+---
+-> Le seul problème que j'ai rencontré est d'avoir été si longtemps en danger, loin de chez moi. 
+	PNJ 2 : Je me suis inquiété tous les jours durant ton absence. 
+	PNJ 2 : Je dois bien t'avoué que j'étais contre à ce que l'on t'envoie. Mais la volonté du roi est immuable... 
+	Player : Encore une fois, notre souverain se choisit des pions pour mener ses combats. 
+	PNJ 2 : Quelque part, sans nous, il n'y a pas de royaume. 
+	Player : Si seulement certain proposait un ordre nouveau et plus juste... 
+	PNJ 2 : Je vois très bien ce que tu veux insinuer. Mais prends garde ! Ce genre de parole te vaudraient l'échafaud devant d'autres personnes ! 
+	Player : Suis-je le seul, au château, à me dire qu'une autre vie est possible ? 
+	PNJ 2 : Certes non. Mais le roi trépassera un jour où l'autre. 
+	Player : Et en attendant nous souffons de ses actes. 
+	PNJ 2 : C'est... Cela aussi passera... Mais je te rejoins. 
+	<<set $Revelation to $Revelation+0.5>>
+	<<jump IntroPNJ2>>
+-> Les problèmes, comme tu dis, sont à venir. 
+	PNJ 2 : Je ne te mentirais pas. Les combats à venir seront rudes. 
+	PNJ 2 : Mais l'important pour toi, à présent, est que tu aies accompli ta mission ! 
+	Player : ... 
+	Player : Oui, c'est vrai. Revoir ma famille finira de me rassurer. 
+	PNJ 2 : Non. 
+	PNJ 2 : Hm... V-Viens d'abords avec moi faire ton rapport. 
+	Player : Tout va bien ? 
+	PNJ 2 : Oui, oui. Mais réglons ça avant, tu veux bien ? 
+	<<set $Intel to $Intel+0.5>>
+	<<jump IntroPNJ2>>
+-> Je crois que le probème, finalement, ce n'est pas eux. Mais les gens du royaume. 
+	PNJ 2 : Te rends-tu compte de ce que tu dis ? Ne soit pas si tranché dans tes propos ! 
+	Player : Ce n'est pas être tranché, c'est être réaliste. Et ne pas être d'accord ne signifie pas que l'on doive se faire la guerre. 
+	PNJ 2 : Arrête de geindre avec ces phrases toutes faites. La vérité est toujours plus complexe. 
+	Player : C'est tout aussi facile de dire ça... 
+	<<set $Mefiance to $Mefiance+0.5>>
+	<<jump IntroPNJ2>>
+-> Player : J’aimerai te dire autre chose. 
+	<<jump IntroPNJ2>>
+===
+
+title: Famille
+---
+Player : Tu étais au courrant ? Depuis longtemps ? 
+PNJ 2 : En réalité, oui... 
+PNJ 2 : Dès que le roi m'a demandé de t'envoyer, il avait pris sa décision. 
+PNJ 2 : Peu après ton départ, ils ont emprisonné ta famille. 
+Player : Mais pourquoi ?! 
+PNJ 2 : Le roi avait peur que tu le trahisses et c'était pour lui une sécurité de ta coopération, si tu avais envie de trahir... 
+Player : Pourquoi ne m'as-tu rien dit ? 
+PNJ 2 : J'avais peur que tu commètes une folie... Pardonnes-moi... 
+Player : Nous verrons... 
+<<set $Mefiance to $Mefiance+0.5>>
+<<jump OutroPNJ2>>
+===
+
+title: OutroPNJ2
+---
+-> Allons faire ce rapport. Oublions ensuite ses tristes jours auprès des rebelles ! 
+	PNJ 2 : Bien dit. Et tout se passera bien, je te le promets ! 
+-> Je ne peux me résoudre à être fidèle au royaume. Pardonnes moi ! [Fuir] 
+	PNJ 2 : Tu fuis ?! 
+	PNJ 2 : Gardes ! Gardes ! 
+-> Je vais faire ce rapport. Mais sâche que ça me fait mal au coeur de condamner autant de gens... <<if $Confiance>=1>> 
+	PNJ 2 : ... 
+	PNJ 2 : Si tu veux repartir, je comprendrais. Et je dirais que tu n'as jamais été ici... 
+		-> Partir 
+			PNJ 2 : Dans ce cas passe par cette porte. Elle te mènera en-dehors de la cité.  
+			PNJ 2 : J'espère sincèrement te revoir vivant. 
+			PNJ 2 : Bon vent. 
+		-> Rester 
+			PNJ 2 : Tu es le malheureux outils d'une nation. 
+			PNJ 2 : Et j'en suis infiniment désolé...  
+-> Je crois avoir réussis à ouvrir les yeux sur ce que tu étais en réalité. [Tuer] <<if $Mefiance>=1>> 
+	PNJ 2 : Que fais-tu ? Poses cette lame ! 
+	Player : Tu es l'un des grands pantins de ce cirque infâme. Ta route s'arrête là. 
+-> Avant que nous écrivions l'histoire, nous avons encore le choix. Nous pouvons changer ce monde. <<if $Revelation>=1>> 
+	PNJ 2 : Tu me fais douter de ma propre histoire et de ma propre place... 
+	Player : J'ai une question plus simple pour toi. 
+	Player : Comment souhaites-tu marquer l'histoire ? Comme un oppresseur ou un sauveur ? 
+	PNJ 2 : ... 
+	PNJ 2 : Je te maudits. 
+	PNJ 2 : Et tu es bien mon digne élève ! 
+	PNJ 2 : Voyons voir comment changer le monde dans ce cas... 
+===

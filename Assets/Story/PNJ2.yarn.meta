@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: 75d16e9883bf58e47add8f28fe348522
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  LastImportHadImplicitStringIDs: 1
+  LastImportHadAnyStrings: 1
+  isSuccessfullyParsed: 1
+  parseErrorMessages:
+  - '54:91: Error: Can''t figure out the type of variable $gender given its context.
+    Specify its type with a <<declare>> statement.
+
+    $gender
+
+'
+  - '54:91: Error: Can''t figure out the type of variable $gender given its context.
+    Specify its type with a <<declare>> statement.
+
+    $gender
+
+'

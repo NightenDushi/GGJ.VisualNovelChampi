@@ -10,7 +10,7 @@ public class ColorButton : MonoBehaviour, IPointerEnterHandler
 
     public Color defaultColor;
     public UnityEvent<Color> onColorChange;
-    private FlexibleColorPicker colorPicker;
+    [SerializeField] private FlexibleColorPicker colorPicker;
     private Color color;
 
     public enum ColorPart
@@ -19,11 +19,14 @@ public class ColorButton : MonoBehaviour, IPointerEnterHandler
     }
 
     public ColorPart Part;
+    [SerializeField] private Image _imagecomponent;
 
     // Start is called before the first frame update
     void Start()
     {   
-        colorPicker = transform.GetChild(1).GetComponent<FlexibleColorPicker>();
+        //NOTE(Nighten) I moved this to a serialized field because child index can easely be out of sync with how the prefab is setup
+        //              Which could simply cause null reference exception
+        //colorPicker = transform.GetChild(1).GetComponent<FlexibleColorPicker>();
 
         SetColor(defaultColor);
         colorPicker.SetColor(defaultColor);
@@ -63,7 +66,7 @@ public class ColorButton : MonoBehaviour, IPointerEnterHandler
     private void SetColor(Color color)
     {   
         colorPicker.startingColor = color;
-        gameObject.GetComponent<Image>().color = color;
+        _imagecomponent.color = color;
     }
 
     public void OnPointerEnter(PointerEventData eventData)

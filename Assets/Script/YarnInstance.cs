@@ -18,6 +18,24 @@ public class YarnInstance : MonoBehaviour
         Dial = _dial;
     }
 
+    [YarnCommand("SetVariable")]
+    public static void SetYarnVariable()
+    {
+        Variable.SetValue("$name", CharacterSprite.Name);
+
+        string gender_pronoun = "nb";
+        switch (CharacterSprite.Pronoun)
+        {
+            case Pronoun.IL:
+                gender_pronoun = "m";
+                break;
+            case Pronoun.ELLE:
+                gender_pronoun = "f";
+                break;
+        }
+        Variable.SetValue("$gender", gender_pronoun);
+    }
+
     //public bool TryGetValue<T>(string variableName, out T result);
     //public void SetValue(string variableName, string stringValue);
     //public void SetValue(string variableName, float floatValue);
