@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterSprite: MonoBehaviour
+public class CharacterSprite : MonoBehaviour
 {
     [SerializeField] Texture2D[] _headList;
     [SerializeField] Texture2D[] _headbottomList;
@@ -10,6 +10,7 @@ public class CharacterSprite: MonoBehaviour
     [SerializeField] Texture2D[] _hatbottomList;
     [SerializeField] Texture2D[] _bodyList;
     [SerializeField] Texture2D[] _eyeList;
+    [SerializeField] Texture2D[] _eyefondList;
     [SerializeField] Texture2D[] _noseList;/////
     [SerializeField] Texture2D[] _mouthList;
     [SerializeField] Texture2D[] _torsoList;
@@ -21,6 +22,7 @@ public class CharacterSprite: MonoBehaviour
     public static Texture2D[] HatBottomList;
     public static Texture2D[] BodyList;
     public static Texture2D[] EyeList;
+    public static Texture2D[] EyeFondList;
     public static Texture2D[] NoseList;/////
     public static Texture2D[] MouthList;
     public static Texture2D[] TorsoList;
@@ -38,6 +40,7 @@ public class CharacterSprite: MonoBehaviour
     public static Color HatColor = Color.white;
     public static Color HatBottomColor = Color.white;
     public static Color EyeColor = Color.white;
+    public static Color EyeFondColor = Color.white;
     public static Color SkinColor = Color.white;
 
     public static string Name;
@@ -52,6 +55,7 @@ public class CharacterSprite: MonoBehaviour
         HatBottomList = _hatbottomList;
         BodyList = _bodyList;
         EyeList = _eyeList;
+        EyeFondList = _eyefondList;
 
         NoseList = _noseList;
         MouthList = _mouthList;
@@ -83,7 +87,10 @@ public class CharacterSprite: MonoBehaviour
     {
         return EyeList[Eye_id];
     }
-
+    public static Texture2D GetEyeFond()
+    {
+        return EyeFondList[Eye_id];
+    }
     public static Texture2D GetNose()
     {
         return NoseList[Nose_id];
@@ -112,6 +119,7 @@ public class CharacterSprite: MonoBehaviour
         _hatbottomList = Resources.LoadAll<Texture2D>("HatsBottom");
         _bodyList = Resources.LoadAll<Texture2D>("Bodies");
         _eyeList = Resources.LoadAll<Texture2D>("Eyes");
+        _eyefondList = Resources.LoadAll<Texture2D>("EyesFond");
 
         _noseList = Resources.LoadAll<Texture2D>("Noses");
         _mouthList = Resources.LoadAll<Texture2D>("Mouths");

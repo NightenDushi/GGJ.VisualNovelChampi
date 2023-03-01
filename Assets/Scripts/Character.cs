@@ -26,6 +26,7 @@ public class Character : MonoBehaviour
 
     private int eyeShapeId;
     private Color eyeColor = Color.white;
+    private Color eyeFondColor = Color.white;
 
     private int bodyTypeId;
     private Color skinColor = Color.white;
@@ -33,7 +34,10 @@ public class Character : MonoBehaviour
     private int headId;
 
     private int noseId;
+
     private int mouthId;
+    private Color mouthColor = Color.white;
+
     private int eyebrowId;
     private int torsoId;
 
@@ -105,7 +109,7 @@ public class Character : MonoBehaviour
         this.eyeColor = newEyeColor;
         UpdateColors();
     }
-
+    
     public void ChangeSkinColor(Color newSkinColor)
     {
         this.skinColor = newSkinColor;

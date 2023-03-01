@@ -14,6 +14,7 @@ public class CharacterSpriteManager : MonoBehaviour
     public Image NoseSprite;
     public Image EyebrowSprite;
     public Image EyesSprite;
+    public Image EyesFondSprite;
     public Image HatSprite;
     public Image HatBottomSprite;
 
@@ -48,6 +49,8 @@ public class CharacterSpriteManager : MonoBehaviour
         
         t = CharacterSprite.GetEye();
         EyesSprite.sprite = Sprite.Create(t, new Rect(0, 0, t.width, t.height), new Vector2(0,0), 1);
+        t = CharacterSprite.GetEyeFond();
+        EyesFondSprite.sprite = Sprite.Create(t, new Rect(0, 0, t.width, t.height), new Vector2(0, 0), 1);
 
         t = CharacterSprite.GetHat();
         HatSprite.sprite = Sprite.Create(t, new Rect(0, 0, t.width, t.height), new Vector2(0,0), 1);
@@ -63,7 +66,6 @@ public class CharacterSpriteManager : MonoBehaviour
         HeadBottomSprite.color = CharacterSprite.SkinColor;
         TorsoSprite.color = CharacterSprite.SkinColor;
         NoseSprite.color = CharacterSprite.SkinColor;
-        MouthSprite.color = CharacterSprite.SkinColor;
         EyebrowSprite.color = CharacterSprite.SkinColor;
 
         //HatColor
@@ -72,5 +74,6 @@ public class CharacterSpriteManager : MonoBehaviour
 
         //EyeColor
         EyesSprite.color = CharacterSprite.EyeColor;
+        EyesFondSprite.color = Color.white;
     }
 }

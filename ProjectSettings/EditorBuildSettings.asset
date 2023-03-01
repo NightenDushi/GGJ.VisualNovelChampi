@@ -9,15 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 1921d7ae7f304dc4a804e95359f23ba0
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/Scenes/Minijeux/Minijeux1.unity
-    guid: 524d4d9eb7a9d6f47b7cd863850a423e
-  - enabled: 1
     path: Assets/Scenes/CharMaker.unity
     guid: b431ca3834844504587a190bda3d160c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dialogue01.unity
     guid: f5df6b5cec0fe9c4cbcc45204cf32aac
+  - enabled: 0
+    path: Assets/Scenes/SampleScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 0
+    path: Assets/Scenes/Minijeux/Minijeux1.unity
+    guid: 524d4d9eb7a9d6f47b7cd863850a423e
   m_configObjects: {}
